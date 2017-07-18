@@ -8,7 +8,7 @@ module Slack
       end
 
       def self.format(issue: nil, administrators: [])
-        self.new(issue: issue, administrators: administrators).format
+        self.new(issue, administrators).format
       end
 
       # See: https://api.slack.com/docs/message-attachments

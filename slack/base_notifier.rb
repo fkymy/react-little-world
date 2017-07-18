@@ -1,6 +1,6 @@
 module Slack
   class BaseNotifer
-    include singleton
+    include Singleton
 
     def initialize
       webhook_url = self.class::WEBHOOK_URL
@@ -17,8 +17,6 @@ module Slack
     def self.notify!(message, options = {})
       nofiy(message.options).value
     end
-
-    private
 
     # See: https://github.com/stevenosloan/slack-notifier
     def notify(message, options = {})
